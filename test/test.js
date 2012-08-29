@@ -1,6 +1,10 @@
 function test() {
     testSet();
+        testLinkedList();
 }
+
+
+
 
 function testSet() {
     
@@ -31,9 +35,22 @@ function testSet() {
         throw "Index element 0 should be 12";
     }
     
-    alert("testSet.js succeded!");
+    alert("test for Set.js succeded!");
+}
+
+
+
+
+function testLinkedList() {
     
+    var ll = new LinkedList();
     
+    ll.add(1);
+    if(ll.size() != 1) {
+        throw "Linked List should contain one element";
+    }
+    
+    alert("test for LinkedList.js succeded!");    
 }
 
 
