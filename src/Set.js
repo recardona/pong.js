@@ -59,10 +59,19 @@ var Set = Class.create({
     
     
     /**
-     * @return {Number} the length of this Set.
+     * @return {Number} the size of this Set.
      */
     size:function() {
         return this.rawArray.length;
+    },
+    
+    
+    /**
+     * Sorts the set according to the specified function.
+     * @param {Function} a comparator function (can be empty) 
+     */
+    sort:function(sortFunction) {
+        return this.rawArray.sort(sortFunction);
     }    
 });
 
