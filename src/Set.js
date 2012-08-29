@@ -6,15 +6,15 @@ var Set = Class.create({
    initialize:function() {
        this.rawArray = [];
    },
-
-
+   
+   
     /**
      * Add an element only if it doesn't exist.
      * @param {Object} the element to add
      */
     add:function(elem) {
         if(this.contains(elem) == undefined){
-            this.rawArray.push(elem)
+            this.rawArray.push(elem);
         }
     },
     
@@ -35,8 +35,9 @@ var Set = Class.create({
      */
     remove:function(elem) {
         var index = this.contains(elem);
-        if(index != undefined)
-            this.rawArray.remove(index);
+        if(index != undefined) {
+            this.rawArray.splice(index,1);
+        }
     },
     
     
@@ -54,6 +55,14 @@ var Set = Class.create({
                 return i;
         }
         return undefined;
+    },
+    
+    
+    /**
+     * @return {Number} the length of this Set.
+     */
+    size:function() {
+        return this.rawArray.length;
     }    
 });
 
