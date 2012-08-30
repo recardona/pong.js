@@ -1,4 +1,6 @@
-
+/**
+ * Test of Set.js
+ */
 function testSet() {
     
     var numberSet = new Set();
@@ -32,8 +34,9 @@ function testSet() {
 }
 
 
-
-
+/**
+ * Test of LinkedList.js
+ */
 function testLinkedList() {
     
     var ll = new LinkedList();
@@ -45,6 +48,64 @@ function testLinkedList() {
     
     alert("test for LinkedList.js succeded!");    
 }
+
+
+/**
+ * Test of Direction.js
+ */
+function testDirection() {
+    var initDir = new Direction();
+    var initX = initDir.getX();
+    var initY = initDir.getY();
+    
+    initDir.flipNorthSouth();
+    
+    var flippedX = initDir.getX();
+    var flippedY = initDir.getY();
+    
+    if(flippedX != initX) {
+        throw "Flipping north/south should not affect the X axis";
+    }
+    
+    if(flippedY == initY || flippedY != -initY) {
+        throw "Flipped north/south should affect the Y axis";
+    }
+    
+    
+    
+    
+    initDir.pickDirection(); //get a new random direction
+    
+    
+    initX = initDir.getX();
+    initY = initDir.getY();
+    
+    initDir.flipEastWest();
+    
+    flippedX = initDir.getX();
+    flippedY = initDir.getY();
+    
+    if(flippedY != initY) {
+        throw "Flipping east/west should not affect the Y axis";
+    } 
+    
+    if(flippedX == initX || flippedX != -initX) {
+        throw "Flipped east/west should affect the X axis";
+    }
+    
+    alert("Test for Direction.js succeded!");
+    
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
