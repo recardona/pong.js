@@ -1,10 +1,3 @@
-function test() {
-    testSet();
-        testLinkedList();
-}
-
-
-
 
 function testSet() {
     
