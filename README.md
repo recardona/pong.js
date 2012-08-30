@@ -1,4 +1,4 @@
 pong.js
 =======
 
-An implementation of Pong using JavaScript
+An implementation of Pong using JavaScript.
