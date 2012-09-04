@@ -1,3 +1,8 @@
+var Game  = SGF.require("Game");
+var testGame = Game.getInstance();
+
+
+
 /**
  * Test of Set.js
  */
@@ -98,8 +103,44 @@ function testDirection() {
 }
 
 
+/**
+ * Test of ScoreLabel.js
+ */
+function testScoreLabel()
+{   
+    var scoreLabelFont = testGame.getFont('../res/font/game_over.ttf');
+    var scoreLabelOne = new ScoreLabel(scoreLabelFont);
+    
+    var pos = scoreLabelOne.getPosition();
+    var posX = pos.x;
+    var posY = pos.y;
+    
+    scoreLabelOne.setPosition(200,130);
+    pos = scoreLabelOne.getPosition();
+    posX = pos.x;
+    posY = pos.y;
+    
+    if(posX != 200) {
+        throw "Set position should change X";
+    }
+    
+    if(posY != 130) {
+        throw "Set position should change Y";
+    }
+    
+    scoreLabelScore = scoreLabelOne.getScore();
+    var oldScore = new Number(scoreLabelScore);
+    
+    scoreLabelOne.incrementScore();
+    var newScore = new Number(scoreLabelOne.getScore());
+    
+    if(++oldScore != newScore) {
+        throw "Increment score should increase score by 1";
+    }
+    
+    alert("Test for ScoreLabel.js succeded!");
 
-
+}
 
 
 
