@@ -33,15 +33,15 @@ divider.y = 35;
 
 //Score Labels
 myGame.ScoreBoard.scoreLeft  = new ScoreLabel(font);
-myGame.ScoreBoard.scoreRigth = new ScoreLabel(font);
+myGame.ScoreBoard.scoreRight = new ScoreLabel(font);
 
 myGame.ScoreBoard.scoreLeft.setPosition(160,40);
-myGame.ScoreBoard.scoreRigth.setPosition(205,40);
+myGame.ScoreBoard.scoreRight.setPosition(205,40);
 
 myGame.ScoreBoard.addComponent(title);
 myGame.ScoreBoard.addComponent(divider);
 myGame.ScoreBoard.addComponent(myGame.ScoreBoard.scoreLeft);
-myGame.ScoreBoard.addComponent(myGame.ScoreBoard.scoreRigth);
+myGame.ScoreBoard.addComponent(myGame.ScoreBoard.scoreRight);
 
 
 
