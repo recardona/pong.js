@@ -78,11 +78,13 @@ var Ball = Class.create(Rectangle, {
         //  check Left and Right wall collisions - points are awarded for these
         if(this.x < 0) {
             //score for Right Player
+            myGame.ScoreBoard.scoreRight.incrementScore();
             this.resetBall();
         }
         
         else if(this.x > game_width) {
             //score for Left Player
+            myGame.ScoreBoard.scoreLeft.incrementScore();
             this.resetBall();
         }
     },
