@@ -2,6 +2,8 @@ var Ball = Class.create(Rectangle, {
 
     initialize:function($super){
         $super();
+        this.horizMaxSpeed = 2;
+        this.vertMaxSpeed  = 3;
         this.width  = 20;
         this.height = 20;
         this.color  = "FF0000";
@@ -63,7 +65,7 @@ var Ball = Class.create(Rectangle, {
             &&
            this.y <= myGame.rightPaddle.getPosition().y + myGame.rightPaddle.getHeight())
         {
-            if(this.x == myGame.rightPaddle.getPosition().x - myGame.rightPaddle.getWidth())
+            if(this.x == (myGame.rightPaddle.getPosition().x - myGame.rightPaddle.getWidth()))
             {
                 this.direction.flipEastWest();
             }
@@ -91,11 +93,13 @@ var Ball = Class.create(Rectangle, {
     
     
     update:function(){
-        this.checkCollisions();
+        
         var pos = this.getPosition();
         
-        this.setPosition(pos.x - 2 * this.direction.getX(), 
-                         pos.y - 3 * this.direction.getY());
+        this.setPosition(pos.x - this.horizMaxSpeed * this.direction.getX(), 
+                         pos.y - this.vertMaxSpeed * this.direction.getY());
+        
+        this.checkCollisions();
          
     }
     
