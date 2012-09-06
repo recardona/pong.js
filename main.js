@@ -41,7 +41,7 @@ myGame.getScript("src/Paddle.js", function() {
 
 myGame.newGame = function(){
     myGame.ScoreBoard.scoreLeft.setText("0");
-    myGame.ScoreBoard.scoreRigth.setText("0");
+    myGame.ScoreBoard.scoreRight.setText("0");
     myGame.ball.resetBall();
     this.start();
 }
