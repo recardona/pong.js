@@ -24,12 +24,12 @@ myGame.getScript("src/Paddle.js", function() {
                   myGame.addComponent(myGame.ball);
                   
                   //left paddle
-                  myGame.leftPaddle = new Paddle(myInput);
+                  myGame.leftPaddle = new Paddle();
                   myGame.leftPaddle.setPosition(0,150);
                   myGame.addComponent(myGame.leftPaddle);
                   
                   //right paddle
-                  myGame.rightPaddle = new Paddle(myInput);
+                  myGame.rightPaddle = new Paddle();
                   myGame.rightPaddle.setPosition(game_width - myGame.rightPaddle.width, 150);
                   myGame.rightPaddle.setIsPlayerOne(false);
                   myGame.addComponent(myGame.rightPaddle);

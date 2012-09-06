@@ -1,7 +1,7 @@
 
 var Paddle = Class.create(Rectangle, { //Rectangle is the parent
     
-    initialize:function($super, inputRef) {
+    initialize:function($super) {
         // Recall:
         //  For any function that we want to call
         //  the parent class, we need to add '$super'
@@ -15,7 +15,6 @@ var Paddle = Class.create(Rectangle, { //Rectangle is the parent
         this.width  = 20;
         this.color  = "0011FF";
         this.isPlayerOne = true;
-        this.myInput = inputRef;
     },
     
     
@@ -81,12 +80,12 @@ var Paddle = Class.create(Rectangle, { //Rectangle is the parent
         //Player 2 input uses the arrow keys
         if(this.isPlayerOne == false) 
         {
-            if(this.myInput.isKeyDown(Input.KEY_UP)) {
+            if(myInput.isKeyDown(Input.KEY_UP)) {
                 if(this.y > 0)
                     this.y -= 10;                    
             }
             
-            else if(this.myInput.isKeyDown(Input.KEY_DOWN)) {
+            else if(myInput.isKeyDown(Input.KEY_DOWN)) {
                 // x,y are taken from the left corner
                 if(this.y < game_height - this.height)
                     this.y += 10;
@@ -95,13 +94,13 @@ var Paddle = Class.create(Rectangle, { //Rectangle is the parent
         
         else //Player 1 uses the a/z keys
         {
-            if(this.myInput.isKeyDown(65)) { //65 = A key
+            if(myInput.isKeyDown(65)) { //65 = A key
               
                 if(this.y > 0) 
                     this.y -= 10;
             }
             
-            else if(this.myInput.isKeyDown(90)) { //90 = Z key
+            else if(myInput.isKeyDown(90)) { //90 = Z key
                 // x,y are taken from the left corner
                 if(this.y < game_height - this.height)
                     this.y += 10;
